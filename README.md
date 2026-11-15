@@ -11,7 +11,7 @@ API REST empresarial desarrollada con **Spring Boot** bajo una **arquitectura N 
 ## Tecnologías Utilizadas
 * Java 21 / Spring Boot 4
 * Spring Web & Spring Data JPA[cite: 1]
-* Oracle Database (Persistencia principal)[cite: 1]
+* PostgreSQL (Persistencia principal)
 * Spring AOP (AspectJ) & Spring MVC Interceptors[cite: 1]
 * GitHub Actions (CI/CD)[cite: 1]
 
@@ -25,10 +25,10 @@ API REST empresarial desarrollada con **Spring Boot** bajo una **arquitectura N 
 * `interceptor` & `configuration`: Auditoría de peticiones HTTP y medición de tiempos[cite: 1].
 * `aspect`: Monitoreo y auditoría transversal de servicios con AOP[cite: 1].
 
-## Configuración de Base de Datos (Oracle)
-1. Crear un usuario/esquema en Oracle Database.
-2. Configurar las credenciales en `src/main/resources/application.properties`:
+## Configuración de Base de Datos (PostgreSQL)
+1. Crear una base de datos llamada `sis_estacionamiento` en PostgreSQL.
+2. Por defecto, la aplicación conecta a `localhost:5432` con usuario y contraseña `postgres`.
+   Puedes cambiar los valores con las variables de entorno `DB_URL`, `DB_USERNAME` y `DB_PASSWORD`.
+   La URL por defecto es:
    ```properties
-   spring.datasource.url=jdbc:oracle:thin:@//localhost:1521/xxxxx
-   spring.datasource.username=xxxxxxxx
-   spring.datasource.password=xxxxxxxx
+   spring.datasource.url=jdbc:postgresql://localhost:5432/sis_estacionamiento
